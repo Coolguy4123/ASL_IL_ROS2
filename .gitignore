@@ -1,0 +1,34 @@
+# colcon build outputs
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Large model weights (share via git-lfs / release assets)
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Recorded data (rosbag2 folders contain .mcap/.db3 plus metadata.yaml)
+*.mcap
+*.db3
+rosbag2_*/
+avros_bags/
+
+# Python packaging / virtualenvs / notebooks
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# VS Code: machine-generated index files (settings.json etc. stay trackable)
+.vscode/browse.vc.db*
+.vscode/ipch/
+
+# OS junk
+.DS_Store
