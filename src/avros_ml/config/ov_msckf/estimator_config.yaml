@@ -1,0 +1,10 @@
+%YAML:1.0
+# config/ov_msckf/estimator_config.yaml
+# Main OpenVINS (visual-inertial odometry) settings: which estimator features are on,
+# camera/IMU topics, feature tracking, initialisation. Start from OpenVINS' own example
+# config and adjust. Remember: OpenVINS needs the RGB intrinsics (kalibr_imucam_chain.yaml)
+# and the IMU noise values (kalibr_imu_chain.yaml).
+# TODO: copy the OpenVINS example estimator_config.yaml here and edit topics/paths.
+verbosity: "INFO"
+use_stereo: false
+max_cameras: 1

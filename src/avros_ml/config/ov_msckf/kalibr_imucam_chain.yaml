@@ -1,0 +1,17 @@
+%YAML:1.0
+# config/ov_msckf/kalibr_imucam_chain.yaml
+# The RGB camera's intrinsics and its pose relative to the IMU, in Kalibr format.
+# Intrinsics: you already have them. T_imu_cam and time offset: run Kalibr camera-IMU
+# calibration (needs the IMU noise values from kalibr_imu_chain.yaml first).
+cam0:
+  T_imu_cam: [1.0, 0.0, 0.0, 0.0,
+              0.0, 1.0, 0.0, 0.0,
+              0.0, 0.0, 1.0, 0.0,
+              0.0, 0.0, 0.0, 1.0]       # TODO from Kalibr
+  cam_overlaps: []
+  camera_model: pinhole
+  distortion_coeffs: [0.0, 0.0, 0.0, 0.0]   # TODO your RGB distortion
+  distortion_model: radtan
+  intrinsics: [0.0, 0.0, 0.0, 0.0]          # TODO fx, fy, cx, cy
+  resolution: [640, 480]                    # TODO
+  rostopic: /rgb/image_raw

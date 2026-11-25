@@ -1,0 +1,12 @@
+# config/fusion.yaml
+# Settings for rgbt_fusion_node: how fast to publish, how far apart in time an RGB and a
+# thermal frame may be and still be paired, what to do when thermal is missing, and the
+# fixed raw-count window used to convert 16-bit thermal to 8 bits.
+rgbt_fusion_node:
+  ros__parameters:
+    max_rate_hz: 20.0
+    max_time_diff_s: 0.04
+    on_missing_thermal: zeros      # drop | zeros | hold_last
+    thermal_raw_min: 0             # TODO: set from your camera's typical scene range
+    thermal_raw_max: 65535
+    calibration_dir: ""            # TODO: path to config/calibration (or leave empty to use the installed copy)

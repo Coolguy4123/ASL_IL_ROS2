@@ -1,0 +1,18 @@
+# config/ekf.yaml
+# Settings for robot_localization's EKF node (the diagram's EKF_node), 30 Hz.
+# Fuses:  /ov_msckf/odomimu (VIO), /wheel_odom (wheels), GNSS via navsat_transform_node.
+# Output: /odom/filtered (nav_msgs/Odometry).
+# The IMU is NOT given to the EKF: OpenVINS already consumed it, and using it twice would
+# overconfidently double-count the same information.
+# Inflate wheel odometry covariance for wheel slip; keep outlier rejection thresholds on.
+#
+# TODO: fill in using the robot_localization docs (frames, *_config matrices, process noise).
+ekf_filter_node:
+  ros__parameters:
+    frequency: 30.0
+    two_d_mode: false
+    odom_frame: odom
+    base_link_frame: base_link
+    world_frame: odom
+    # odom0: /ov_msckf/odomimu   odom0_config: [...]
+    # odom1: /wheel_odom         odom1_config: [...]

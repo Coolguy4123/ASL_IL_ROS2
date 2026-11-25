@@ -1,0 +1,12 @@
+# config/calibration/rgb_thermal_extrinsics.yaml
+# How the thermal camera is positioned relative to the RGB camera (rotation + translation),
+# used to line the two images up pixel-for-pixel. Alternatively, a 3x3 homography measured
+# at your typical working distance (exact only at that distance, since there is no depth).
+T_rgb_thermal: [1.0, 0.0, 0.0, 0.0,
+                0.0, 1.0, 0.0, 0.0,
+                0.0, 0.0, 1.0, 0.0,
+                0.0, 0.0, 0.0, 1.0]      # TODO from calibration
+homography_thermal_to_rgb: [1.0, 0.0, 0.0,
+                            0.0, 1.0, 0.0,
+                            0.0, 0.0, 1.0]   # TODO optional fallback
+working_distance_m: 5.0                      # distance at which the homography is exact

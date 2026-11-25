@@ -1,0 +1,14 @@
+# config/il.yaml
+# Which imitation-learning policy il_node loads and how often it decides.
+#   model   : "torchscript" (TCN) | "dummy" | "pkg.module:Class"
+#   rate_hz : MUST equal 1/dt in the policy's model.yaml (the node checks this at startup)
+#   max_frame_age_s : if the newest image is older than this, the node stays silent and
+#                     the arbiter's watchdog takes over
+il_node:
+  ros__parameters:
+    model: dummy
+    weights: ""
+    spec: ""
+    device: "cuda:0"
+    rate_hz: 20.0
+    max_frame_age_s: 0.15

@@ -1,0 +1,13 @@
+# config/detector.yaml
+# Which detector model detector_node loads and where. To change the detector, edit this file
+# (or override on the command line); no code changes are needed.
+#   model   : "tensorrt" (YOLO engine on the Orin) | "torchscript" | "dummy" | "pkg.module:Class"
+#   weights : the .engine / .pt file (keep large files out of git)
+#   spec    : the model.yaml describing input size, normalisation and class names
+detector_node:
+  ros__parameters:
+    model: dummy
+    weights: ""
+    spec: ""
+    device: "cuda:0"
+    score_threshold: 0.4

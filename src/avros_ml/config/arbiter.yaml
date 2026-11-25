@@ -1,0 +1,28 @@
+# config/arbiter.yaml
+# Safety limits for arbiter_node. These are the numbers that keep the robot safe, so change
+# them deliberately and test on blocks/with the robot lifted before ground tests.
+#   *_timeout_s   : how long an input may be silent before the arbiter reacts
+#   v_max, w_max  : absolute speed limits (m/s, rad/s)
+#   a_acc, a_dec  : acceleration / deceleration limits (stopping is allowed to be quicker)
+#   hazards       : classes that slow the robot, and the distance rules (see safety/hazard_distance.py)
+#   camera_*      : needed to estimate distance from where an object touches the ground
+arbiter_node:
+  ros__parameters:
+    rate_hz: 20.0
+    il_timeout_s: 0.2
+    detection_timeout_s: 0.3
+    v_max: 1.0
+    w_max: 1.0
+    v_creep: 0.1
+    a_acc: 0.5
+    a_dec: 1.5
+    hazard_classes: ["person", "vehicle"]
+    hazard_min_score: 0.5
+    d_stop_m: 1.5
+    brake_decel: 1.0
+    corridor_half_angle_deg: 18.0
+    camera_height_m: 0.6           # TODO: measure
+    camera_pitch_deg: 0.0          # TODO: measure
+    debounce_on: 3
+    debounce_window: 5
+    release_hold_s: 1.0

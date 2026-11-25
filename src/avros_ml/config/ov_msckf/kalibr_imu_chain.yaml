@@ -1,0 +1,20 @@
+%YAML:1.0
+# config/ov_msckf/kalibr_imu_chain.yaml
+# The IMU's noise model for OpenVINS. These four numbers decide how much OpenVINS trusts
+# the IMU, so they are the main knob for "IMU noise".
+# How to get them: record the Xsens sitting perfectly still for several hours at the real
+# output rate (after a 10-15 min warm-up), run an Allan variance tool (e.g. allan_variance_ros),
+# then INFLATE the result somewhat for real-world vibration and tune from there.
+imu0:
+  T_i_b: [1.0, 0.0, 0.0, 0.0,
+          0.0, 1.0, 0.0, 0.0,
+          0.0, 0.0, 1.0, 0.0,
+          0.0, 0.0, 0.0, 1.0]
+  accelerometer_noise_density: 0.0   # TODO from Allan variance
+  accelerometer_random_walk: 0.0     # TODO
+  gyroscope_noise_density: 0.0       # TODO
+  gyroscope_random_walk: 0.0         # TODO
+  rostopic: /imu/data
+  time_offset: 0.0
+  update_rate: 200.0
+  model: "calibrated"

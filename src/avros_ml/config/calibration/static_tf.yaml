@@ -1,0 +1,8 @@
+# config/calibration/static_tf.yaml
+# The fixed transforms between robot parts (where each sensor is bolted on), published once
+# as /tf_static by drivers.launch.py. Needed frames: base_link, imu, rgb_optical, thermal_optical.
+# Measure or take them from CAD / Kalibr. Units: metres and radians (x y z roll pitch yaw).
+transforms:
+  - {parent: base_link, child: imu,             xyz: [0.0, 0.0, 0.0], rpy: [0.0, 0.0, 0.0]}   # TODO
+  - {parent: base_link, child: rgb_optical,     xyz: [0.0, 0.0, 0.0], rpy: [0.0, 0.0, 0.0]}   # TODO
+  - {parent: base_link, child: thermal_optical, xyz: [0.0, 0.0, 0.0], rpy: [0.0, 0.0, 0.0]}   # TODO

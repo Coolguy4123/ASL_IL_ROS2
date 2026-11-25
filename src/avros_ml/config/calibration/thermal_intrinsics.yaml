@@ -1,0 +1,13 @@
+# config/calibration/thermal_intrinsics.yaml
+# Thermal camera calibration. NOT AVAILABLE YET: needs a calibration target that shows up
+# in thermal (e.g. a heated checkerboard or a pattern of materials with different emissivity).
+# Without this file (and rgb_thermal_extrinsics.yaml) the fusion node can only use a
+# hand-measured homography as a temporary fallback.
+image_width: 0            # TODO
+image_height: 0           # TODO
+fx: 0.0                   # TODO
+fy: 0.0                   # TODO
+cx: 0.0                   # TODO
+cy: 0.0                   # TODO
+distortion_model: plumb_bob
+distortion_coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]

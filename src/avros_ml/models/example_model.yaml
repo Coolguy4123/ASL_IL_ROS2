@@ -1,0 +1,17 @@
+# models/example_model.yaml
+# Template for the "user manual" that must sit next to every model's weights (name it
+# model.yaml or whatever you point the `spec` parameter to). It tells the node how to feed
+# the model exactly as it was trained, and lets the node refuse to start on a mismatch.
+# Copy this file next to your .engine / .pt file and edit it.
+input:
+  size: [480, 640]              # [height, width] the model expects
+  channels: [B, G, R, T]        # order of the 4 channels in /perception/rgbt
+  mean: [0.0, 0.0, 0.0, 0.0]
+  std: [255.0, 255.0, 255.0, 255.0]
+  dtype: float16
+output:
+  classes: [person, vehicle]    # detector only: index -> name
+  output_scale: [1.0, 1.0]      # policy only: multiply raw network output to get (m/s, rad/s)
+policy:                         # policy (TCN) only
+  history: 16                   # time steps of context (the TCN's receptive field)
+  dt: 0.05                      # seconds between steps in training (= 1 / il_node rate_hz)

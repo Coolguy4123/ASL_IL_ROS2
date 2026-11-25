@@ -1,0 +1,12 @@
+# config/calibration/rgb_intrinsics.yaml
+# Your RGB camera calibration (you already have this). Used in three places: OpenVINS,
+# the fusion node (to warp thermal into this view), and the arbiter (to turn a bounding box
+# into a distance). If fusion resizes the image, fx, fy, cx, cy must be scaled to match.
+image_width: 0            # TODO
+image_height: 0           # TODO
+fx: 0.0                   # TODO
+fy: 0.0                   # TODO
+cx: 0.0                   # TODO
+cy: 0.0                   # TODO
+distortion_model: plumb_bob
+distortion_coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]

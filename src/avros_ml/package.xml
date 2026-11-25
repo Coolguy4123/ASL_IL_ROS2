@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<!--
+  package.xml - the "ID card" of avros_ml.
+  Tells ROS 2 / colcon the package name, who maintains it, and which other ROS
+  packages must be installed for it to build and run.
+  NOTE: PyTorch, TensorRT and Ultralytics are NOT listed here because they are not
+  rosdep keys. On the Jetson Orin they are installed from NVIDIA's JetPack / Jetson
+  wheels (see README.md).
+-->
+<package format="3">
+  <name>avros_ml</name>
+  <version>0.1.0</version>
+  <description>Perception (RGB-T fusion, YOLO), imitation-learning (TCN) and safety arbiter for the AVROS robot.</description>
+  <maintainer email="fyiu@cpp.edu">Freeman</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>vision_msgs</exec_depend>
+  <exec_depend>diagnostic_msgs</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+  <exec_depend>robot_localization</exec_depend>
+  <exec_depend>rosbag2</exec_depend>
+
+  <test_depend>python3-pytest</test_depend>
+  <test_depend>launch_testing</test_depend>
+  <test_depend>launch_testing_ros</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
