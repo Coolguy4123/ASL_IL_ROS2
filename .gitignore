@@ -29,6 +29,7 @@ venv/
 # VS Code: machine-generated index files (settings.json etc. stay trackable)
 .vscode/browse.vc.db*
 .vscode/ipch/
+.vscode/
 
 # OS junk
 .DS_Store
