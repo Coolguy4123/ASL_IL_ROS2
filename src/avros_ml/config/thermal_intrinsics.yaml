@@ -1,0 +1,8 @@
+image_width: 0            # TODO
+image_height: 0           # TODO
+fx: 0.0                   # TODO
+fy: 0.0                   # TODO
+cx: 0.0                   # TODO
+cy: 0.0                   # TODO
+distortion_model: plumb_bob
+distortion_coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
